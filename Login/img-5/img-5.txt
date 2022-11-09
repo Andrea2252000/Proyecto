@@ -1,0 +1,2 @@
+<a href="change-img.php?Id=<?php echo $juego->id_game?>">
+                            <input type='button' name='add' id='add' value='Cambiar Imagen'></a>

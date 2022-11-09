@@ -1,0 +1,23 @@
+<?php 
+                        // Include the database configuration file  
+                        require_once 'ej-insert/dbConfig.php'; 
+                        
+                        // Get image data from database 
+                        $result = $db->query("SELECT img_producto FROM images where id = $juego->id_game"); 
+                        ?>
+
+                        <?php if($result->num_rows > 0){ ?> 
+                            <div class="gallery"> 
+                                <?php while($row = $result->fetch_assoc()){ ?> 
+                                    <img src="data:img_producto/jpg;charset=utf8;base64,<?php echo base64_encode($row['img_producto']); ?>" /> 
+                                <?php } ?> 
+                            </div> 
+                        <?php }else{ ?> 
+                            <a href="insert.php?Id=<?php echo $juego->id_game?>">
+                            <input type='button' name='add' id='add' value='Agregar Imagen'></a>
+                        <?php } ?>
+
+
+--------------------------------------------------------------------
+
+<td class='bot'><input type='submit' name='crear' id='crear' value='Agregar'></td>

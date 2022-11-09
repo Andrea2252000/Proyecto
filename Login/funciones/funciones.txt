@@ -1,0 +1,1 @@
+javascript:borrar_todo('crud/borrar.php?Id=<?php echo $juego->id_game?>')
